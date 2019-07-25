@@ -1,0 +1,61 @@
+
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+      <script type="text/javascript">
+
+            $(document).ready(function(){
+            $("#submit").click(function (e){            //changed
+                      e.preventDefault();
+                      // var $form = $(this);
+                    $.ajax({
+                            type: 'POST',
+                            url : 'https://081ad448.ngrok.io/webview',
+                            data: $('#formWeb').serialize(),
+                            success: function(response) {
+                              window.location ='https://www.messenger.com/closeWindow/?image_url=https://image.shutterstock.com/image-vector/sorry-we-closed-white-sign-600w-1151159918.jpg&display_text=Hola';
+                            }
+
+                            })
+              });
+            });
+        </script>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>Bienvenido</title>
+    </head>
+    <body>
+      <h2 style="text-align: center">Bienvenido</h2>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-12" style="text-align: center">
+              <form id="formWeb" method="POST">
+                    <h6>Por favor envía tu usuario</h6>
+                    <label for="inputPassword" class="col-sm-10 col-form-label">Usuario</label>
+                    <div class="col-12">
+                      <img src="https://ae01.alicdn.com/kf/HTB1Hq1jKXGWBuNjy0Fbq6z4sXXaU/Javascript-T-Shirt-React-Cartoon-Print-T-Shirt-Men-Casual-T-Shirts-Summer-Male-Short-Sleeve.jpg_q50.jpg" width="200px"/>
+                      <input type="text" class="form-control col-10" name="user" placeholder="Usuario">
+                    </div>
+                    <br><br>
+                    <div class="col-3">
+                        <button type="button" id="submit" class="btn btn-primary" >Enviar</button>
+                      </div>
+                    <!-- <button type="submit" class="form-control" >Enviar</button> -->
+                  </div>
+                </form>
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+  </html>
+</body>
+</html>
